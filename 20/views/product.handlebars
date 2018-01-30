@@ -1,0 +1,17 @@
+<h1 class="jumbotron text-center">Product Menu</h1>
+<div id="productEntry" class="row">
+  <div class="card-columns" id="product_list">
+    {{#each products}}
+    <div class="card m-2" id={{this.title}}>
+      <img class="card-img-top" src={{this.img}} alt={{this.title}}>
+      <div class="card-block">
+        <h4 class="card-title">{{this.title}}</h4>
+        <div class="button-group p-2">
+          <a href={{this.link}} class="btn btn-success btn-block">To Buy</a>
+          <a href="/product/{{this.title}}" class="btn btn-primary btn-block">People's Comment</a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

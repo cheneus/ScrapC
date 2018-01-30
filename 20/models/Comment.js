@@ -23,7 +23,7 @@ var commentSchema = new Schema({
 });
 
 // we need to create a model using it
-var Comments = mongoose.model('Comment', commentSchema);
+var Comment = mongoose.model('comment', commentSchema);
 
 // make this available to our Node applications
-module.exports = Comments;
+module.exports = Comment;
