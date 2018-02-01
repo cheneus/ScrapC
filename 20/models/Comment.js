@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
-var commentSchema = new Schema({
+var CommentSchema = new Schema({
     rating: {
         type: Number,
         min: 1,
@@ -14,16 +14,20 @@ var commentSchema = new Schema({
         type: String,
         required: true
     },
-    comment: {
+    body: {
         type: String,
         required: true
     },
+    author: {
+        type: String,
+        required: true
+    }
 }, {
     timestamps: true
 });
 
 // we need to create a model using it
-var Comment = mongoose.model('comment', commentSchema);
+var Comment = mongoose.model('comment', CommentSchema);
 
 // make this available to our Node applications
 module.exports = Comment;

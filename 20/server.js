@@ -19,13 +19,14 @@ const exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-// app.use(express.static('js'));
+
 // Use morgan logger for logging requests
 app.use(logger("dev"));
 // Use body-parser for handling form submissions
 app.use(bodyParser.urlencoded({ extended: false }));
 // Use express.static to serve the public folder as a static directory
-app.use(express.static("public/js"));
+// app.use(express.static("public/js"));
+app.use(express.static('public'));
 
 mongoose.connect('mongodb://localhost/coffee', { useMongoClient: true },
   function(err) {
@@ -51,8 +52,8 @@ request("http://happymugcoffee.com/6-roasted-coffee", function(error, response, 
     var result = {};
     result.img = $(element).children('.preview').children().children().attr('src')
     result.link = $(element).children('.product-info').children().attr('href');
-    title = $(element).children(".product-info").children('a').text();
-    result.title = title.replace(/\s+/g, '')
+    result.title = $(element).children(".product-info").children('a').text();
+    // result.title = title.replace(/\s+/g, '')
     // console.log("before db" + JSON.stringify(result))
     db.Product.create(result)
       .then((dbProduct) => {
@@ -61,8 +62,8 @@ request("http://happymugcoffee.com/6-roasted-coffee", function(error, response, 
         console.log("inserted")
       })
       .catch((err) => {
-        console.log(err)
-        // console.log("duplicate")
+        // console.log(err)
+        console.log("duplicate")
       })
   });
   //   res.send("Done SC")
