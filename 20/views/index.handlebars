@@ -1,12 +1,38 @@
 <h1 class="jumbotron text-center">Welcome to Scrape</h1>
-<div class="list-group">
-  <h2>Some stuff you might wanna know?</h2>
-  <a href="https://www.npmjs.com/package/cheerio" class="list-group-item list-group-item-action">
-    What was used to scrape the site
-  </a>
-  <a href="http://happymugcoffee.com/6-roasted-coffee" class="list-group-item list-group-item-action">The Site! </a>
-  <a href="/product" class="list-group-item list-group-item-action">What I got.</a>
-  <a href="https://www.reddit.com/r/random/" class="list-group-item list-group-item-action">This is just random...</a>
-  <a href="" class="list-group-item list-group-item-action">Good to know I can do this...</a>
+<!-- List group -->
+<h2 class="p-2 text-center">Some stuff you might wanna know?</h2>
+<div class="row">
+  <div class="col-lg-4">
+    <div class="list-group" id="myList" role="tablist">
+      <a class="list-group-item list-group-item-action active" data-toggle="list" href="#home" role="tab">How I got my products</a>
+      <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile" role="tab">What I got</a>
+      <a class="list-group-item list-group-item-action" data-toggle="list" href="#messages" role="tab">Technology used</a>
+    </div>
+  </div>
+  <!-- Tab panes -->
+  <div class="col-lg-7">
+    <div class="tab-content">
+      <div class="tab-pane active" id="home" role="tabpanel">
+        First of all, information is scrape from a site as long as content is not dynamically created. Then, it is added into a DB, used as a pseudo-product review
+      </div>
+      <div class="tab-pane" id="profile" role="tabpanel">
+        <p>
+          after doing the scraping and some organization and stamp on the word "THIS IS IT! >><a href="/product"> "MY" Products</a>
+        </p>
+        <p>
+          Where I got the infomation from
+          <a href="http://happymugcoffee.com/6-roasted-coffee" target="_blank">the site(happymugcoffee.com)! </a>
+        </p>
+      </div>
+      <div class="tab-pane" id="messages" role="tabpanel">
+        <li>
+          <a href="https://www.npmjs.com/package/cheerio" target="_blank">
+            What was used to scrape the site: Cheerio
+          </a>
+        </li>
+        <li>NodeJs</li>
+        <li>MongoDB</li>
+      </div>
+    </div>
+  </div>
 </div>
-
