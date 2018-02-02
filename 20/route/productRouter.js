@@ -57,7 +57,7 @@ productRouter.route('/:title')
         console.log("title = " +req.params.title)
         console.log(dbComment._id)
         // return db.Product.findOneAndUpdate({ title: req.params.title }, { comment: dbComment._id });
-        return db.Product.findOneAndUpdate({ title: req.params.title }, {$push:{ comment: dbComment._id} }, { new: true });
+        db.Product.findOneAndUpdate({ title: req.params.title }, {$push:{ comment: dbComment._id} }, { new: true });
       })
       .then(function(dbProduct) {
         console.log(`doing dbProduct`)
