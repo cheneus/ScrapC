@@ -5,6 +5,9 @@ const mongoose = require("mongoose");
 const request = require("request");
 const cheerio = require("cheerio");
 
+const env = process.env.NODE_ENV || 'development';
+const config = require('./config')[env];
+
 // Require all models
 const db = require("./models");
 const PORT = 3000;
@@ -72,6 +75,8 @@ request("http://happymugcoffee.com/6-roasted-coffee", function(error, response, 
 })
 
 
-app.listen(PORT, function() {
-  console.log("App running on port " + PORT + "!");
-});
+// app.listen(PORT, function() {
+//   console.log("App running on port " + PORT + "!");
+// });
+
+app.listen(config.server.port)
