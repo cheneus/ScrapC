@@ -1,7 +1,7 @@
 const config = {
   development: {
     //url to be used in link generation
-    url: 'locolhost',
+    url: '',
     //mongodb connection settings
     database: {
       host: '127.0.0.1',
@@ -11,7 +11,7 @@ const config = {
     //server details
     server: {
       host: '127.0.0.1',
-      port: '3002'
+      port: '3000'
     }
   },
   production: {
@@ -19,9 +19,9 @@ const config = {
     url: 'http://my.site.com',
     //mongodb connection settings
     database: {
-      host: '127.0.0.1',
-      port: '27017',
-      db: 'site'
+      host: 'ds225078.mlab.com',
+      port: '25078',
+      db: 'heroku_jhbhrwf2'
     },
     //server details
     server: {
@@ -31,3 +31,4 @@ const config = {
   }
 };
 module.exports = config;
+mongodb://<dbuser>:<dbpassword>@ds225078.mlab.com:25078/heroku_jhbhrwf2

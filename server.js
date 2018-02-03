@@ -79,4 +79,6 @@ request("http://happymugcoffee.com/6-roasted-coffee", function(error, response, 
 //   console.log("App running on port " + PORT + "!");
 // });
 
-app.listen(config.server.port)
+app.listen(config.server.port, () => {
+  console.log(`App running on port ${config.server.port}`)
+})
