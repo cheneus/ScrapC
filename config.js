@@ -16,7 +16,7 @@ const config = {
   },
   production: {
     //url to be used in link generation
-    url: 'http://my.site.com',
+    url: 'https://scrap-6647.herokuapp.com/',
     //mongodb connection settings
     database: {
       host: 'ds225078.mlab.com',
@@ -31,4 +31,3 @@ const config = {
   }
 };
 module.exports = config;
-mongodb://<dbuser>:<dbpassword>@ds225078.mlab.com:25078/heroku_jhbhrwf2
