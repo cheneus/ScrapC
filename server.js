@@ -10,7 +10,7 @@ const config = require('./config')[env];
 
 // Require all models
 const db = require("./models");
-const PORT = 3000;
+const PORT = process.env.PORT ||3000;
 // Initialize Express
 const app = express();
 const scrapeRouter = require('./route/scrapeRouter')
@@ -31,7 +31,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(express.static("public/js"));
 app.use(express.static('public'));
 
-mongoose.connect('mongodb://localhost/coffee', { useMongoClient: true },
+const connection = process.env.MONGODB_URI || 'mongodb://localhost/coffee'
+
+mongoose.connect(connection, { useMongoClient: true },
   function(err) {
     if (err) throw err
   })
@@ -79,6 +81,6 @@ request("http://happymugcoffee.com/6-roasted-coffee", function(error, response, 
 //   console.log("App running on port " + PORT + "!");
 // });
 
-app.listen(config.server.port, () => {
-  console.log(`App running on port ${config.server.port}`)
+app.listen(PORT, () => {
+  console.log(`App running on port ${env}`)
 })
